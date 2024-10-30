@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_home_work6/styles/text_styles.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -15,9 +16,7 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text(
-              'Welcome!',
-            ),
+            TextStyles.styledText('Welcome!', TextStyles.greetingsText),
             const SizedBox(
               height: 20,
             ),
@@ -26,7 +25,7 @@ class HomeScreen extends StatelessWidget {
                 Navigator.pushNamed(context, '/profile');
               },
               child: const Text(
-                'Go to the profile',
+                'Go to the profile', style: TextStyles.buttonText,
               ),
             ),
           ],

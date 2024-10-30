@@ -17,8 +17,8 @@ class ImageAssetsContainer extends StatelessWidget {
             ),
             child: Image.asset(
               AssetsImages.userPhoto,
-              height: 160,
-              width: 160,
+              height: 50,
+              width: 50,
             ),
           ),
           Positioned.fill(
@@ -26,8 +26,8 @@ class ImageAssetsContainer extends StatelessWidget {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(25),
                 border: Border(
-                  top: BorderSide(color: Colors.blue, width: 5.0),
-                  left: BorderSide(color: Colors.blue, width: 5.0),
+                  top: BorderSide(color: Colors.indigo, width: 5.0),
+                  left: BorderSide(color: Colors.indigo, width: 5.0),
                 ),
               ),
             ),
@@ -37,8 +37,8 @@ class ImageAssetsContainer extends StatelessWidget {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(25),
                 border: Border(
-                  right: BorderSide(color: Colors.yellow, width: 5.0),
-                  bottom: BorderSide(color: Colors.yellow, width: 5.0),
+                  right: BorderSide(color: Colors.deepOrange, width: 5.0),
+                  bottom: BorderSide(color: Colors.deepOrange, width: 5.0),
                 ),
               ),
             ),

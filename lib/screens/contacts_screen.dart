@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_home_work6/styles/text_styles.dart';
+import 'package:flutter_home_work6/widgets/contacts_item.dart';
 
 class ContactsScreen extends StatelessWidget {
   const ContactsScreen({super.key});
@@ -7,26 +9,34 @@ class ContactsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'My Contacts',
-        ),
+        title: const Text('My Contacts'),
       ),
-      body: Center(
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            const Text(
-              'Welcome!',
+            Expanded(
+              child: SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    for (int i = 0; i < 12; i++)
+                      ContactsItem(),
+                  ],
+                ),
+              ),
             ),
-            const SizedBox(
-              height: 20,
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '/profile');
-              },
-              child: const Text(
-                'Go to the profile',
+            Padding(
+              padding: const EdgeInsets.only(bottom: 10),
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/');
+                },
+                child: const Text(
+                  'Go to the start',
+                  style: TextStyles.buttonText,
+                ),
               ),
             ),
           ],
