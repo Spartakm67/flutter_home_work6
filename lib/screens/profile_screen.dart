@@ -14,6 +14,9 @@ class ProfileScreen extends StatelessWidget {
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
+            const SizedBox(
+              height: 20,
+            ),
             Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
@@ -22,7 +25,7 @@ class ProfileScreen extends StatelessWidget {
                     children: [
                       ImageAssetsContainer(),
                       const SizedBox(height: 10),
-                      const Text('Profile photo!'),
+                      const Text('My photo!'),
                     ],
                   ),
                   Column(
