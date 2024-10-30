@@ -19,33 +19,40 @@ class ProfileScreen extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Column(
-                  children: [
-                    ImageAssetsContainer(),
-                    const SizedBox(height: 10),
-                    const Text('User photo', style: TextStyles.defaultText),
-                  ],
-                ),
-                const SizedBox(
-                  width: 10,
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    TextStyles.styledText(
-                        'Name: ${UserData.userName}', TextStyles.userText),
-                    const SizedBox(height: 30),
-                    TextStyles.styledText(
-                        'Age: ${UserData.userAge}', TextStyles.userText),
-                    const SizedBox(height: 30),
-                    TextStyles.styledText(
-                        'Work: ${UserData.userWork}', TextStyles.userText),
-                  ],
-                ),
-              ],
+            Container(
+              padding: const EdgeInsets.all(1),
+              decoration: BoxDecoration(
+                color: Colors.grey[100],
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Column(
+                    children: [
+                      ImageAssetsContainer(),
+                      const SizedBox(height: 10),
+                      const Text('User photo', style: TextStyles.defaultText),
+                    ],
+                  ),
+                  const SizedBox(
+                    width: 5,
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      TextStyles.styledText(
+                          'Name: ${UserData.userName}', TextStyles.userText),
+                      const SizedBox(height: 30),
+                      TextStyles.styledText(
+                          'Age: ${UserData.userAge}', TextStyles.userText),
+                      const SizedBox(height: 30),
+                      TextStyles.styledText(
+                          'Work: ${UserData.userWork}', TextStyles.userText),
+                    ],
+                  ),
+                ],
+              ),
             ),
             const Spacer(),
             Padding(
