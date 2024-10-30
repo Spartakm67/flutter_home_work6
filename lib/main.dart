@@ -20,8 +20,8 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => const HomeScreen(),
-        // '/profile': (context) => const ProfileScreen(),
-        // '/contacts': (context) => const ContactsScreen(),
+        '/profile': (context) => const ProfileScreen(),
+        '/contacts': (context) => const ContactsScreen(),
       }
     );
   }
