@@ -8,41 +8,43 @@ class ProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'My Profile Screen',
-        ),
+        title: const Text('My Profile Screen'),
       ),
-      body: Center(
-        child: Column(children: [
-          Row(children: [
-            ImageAssetsContainer(),
-            const Text(
-              'Profile photo!',
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          children: [
+            Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      ImageAssetsContainer(),
+                      const SizedBox(height: 10),
+                      const Text('Profile photo!'),
+                    ],
+                  ),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: const [
+                      Text('Profile photo!'),
+                      Text('Profile photo!'),
+                      Text('Profile photo!'),
+                    ],
+                  ),
+                ],
+              ),
+            // ),
+            const Spacer(),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/contacts');
+              },
+              child: const Text('Go to the Contacts'),
             ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Text(
-                  'Profile photo!',
-                ),
-                const Text(
-                  'Profile photo!',
-                ),
-                const Text(
-                  'Profile photo!',
-                ),
-              ],
-            ),
-          ]),
-          ElevatedButton(
-            onPressed: () {
-              Navigator.pushNamed(context, '/contacts');
-            },
-            child: const Text(
-              'Go to the Contacts',
-            ),
-          ),
-        ]),
+          ],
+        ),
       ),
     );
   }
