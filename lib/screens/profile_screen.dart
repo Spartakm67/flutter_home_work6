@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_home_work6/widgets/image_assets_container.dart';
-import 'package:flutter_home_work6/constants/user_data.dart';
+import 'package:flutter_home_work6/models/user_data.dart';
 import 'package:flutter_home_work6/styles/text_styles.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -8,6 +8,12 @@ class ProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final user = UserData(
+        userName: 'Spartak',
+        userAge: 'Everything is ahead',
+        userWork: 'I make up my mind',
+    );
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('My Profile Screen'),
@@ -42,13 +48,19 @@ class ProfileScreen extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       TextStyles.styledText(
-                          'Name: ${UserData.userName}', TextStyles.userText),
+                        'Name: ${user.userName}',
+                        TextStyles.userText,
+                      ),
                       const SizedBox(height: 30),
                       TextStyles.styledText(
-                          'Age: ${UserData.userAge}', TextStyles.userText),
+                        'Age: ${user.userAge}',
+                        TextStyles.userText,
+                      ),
                       const SizedBox(height: 30),
                       TextStyles.styledText(
-                          'Work: ${UserData.userWork}', TextStyles.userText),
+                        'Work: ${user.userWork}',
+                        TextStyles.userText,
+                      ),
                     ],
                   ),
                 ],
@@ -61,8 +73,10 @@ class ProfileScreen extends StatelessWidget {
                 onPressed: () {
                   Navigator.pushNamed(context, '/contacts');
                 },
-                child: const Text('Go to the Contacts',
-                    style: TextStyles.buttonText),
+                child: const Text(
+                  'Go to the Contacts',
+                  style: TextStyles.buttonText,
+                ),
               ),
             ),
           ],
